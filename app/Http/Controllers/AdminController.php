@@ -11,6 +11,22 @@ use Illuminate\Support\Facades\Redirect;
 session_start();
 class AdminController extends Controller
 {
+    // hàm đăng nhập admin
+    public function AuthLogin(){
+        $admin_id = Session::get('admin_id');
+        if($admin_id)
+        {
+            return Redirect::to('dashboard');
+        }
+        else
+        {
+           return Redirect::to('admin-login')->send();
+           
+        }
+
+    }
+
+
     // hàm hiển thi login
     public function index(){
         return view('admin_login');
@@ -18,11 +34,14 @@ class AdminController extends Controller
 
     // hàm hiển thị trang thống kê , điều khiển
     public function show_dashboard(){
+        $this->AuthLogin();
         return view('admin.dashboard');
     }
 
     //  hàm login hiển thị trang điều khiển khi đăng nhập thành công
     public function dashboard(Request $request){
+        $this->AuthLogin();
+
         // biến admin_email sẽ lây tên trường admin trong form admin_login.blade.php
        $admin_email = $request->admin_email;
        $admin_password = md5($request->admin_password);
@@ -47,6 +66,7 @@ class AdminController extends Controller
 
      //  hàm logout
      public function logout(){
+        $this->AuthLogin();
         Session::put('admin_name', null);
         Session::put('admin_id',null);
         return redirect('admin-login/');
