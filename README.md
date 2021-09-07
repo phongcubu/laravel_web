@@ -18,3 +18,16 @@ git status
 git commit -m "b17-b19+b26 làm phan thuong hieu san pham "
 git pull origin master
 git push  origin master
+
+====== lệnh clone chay và cục xúc để đưa dự án về máy ===========
++ tạo 1 thư mục 
++ chạy lệnh git init
++ git remote add origin "link dự án "
++  git status : check xem mình đã ở nhánh master chưa . nếu chạy ra như vầy (On branch master
+) là mình đang trong nhánh master
++git pull origin master : dự án sẽ đc lấy về máy rồi =))
+ +Rồi mỗi lần trước khi bắt tay vào làm ae hãy chay : git pull origin master  (để xem ae khác có thêm gì về project không nhé rồi để mà clone nó về máy mình!)
+ 
+
+
+
