@@ -28,6 +28,8 @@ git push  origin master
 +git pull origin master : dự án sẽ đc lấy về máy rồi =))
  +Rồi mỗi lần trước khi bắt tay vào làm ae hãy chay : git pull origin master  (để xem ae khác có thêm gì về project không nhé rồi để mà clone nó về máy mình!)
  
+tiếp tục chiến mạnh ae nhé !
+ 
 
 
 
